@@ -1,6 +1,6 @@
 require_relative ('lib/flower_shop')
-
-
+require_relative ('lib/order')
+=begin
 def display_bundle_breakup (price_holder)
 
   puts "try again" if price_holder.empty?
@@ -99,9 +99,13 @@ end
 def announcement
   puts "Welcome to THE FLOWER SHOP"
 end
+=end
 
-announcement
-take_order
+order = Order.new
+order.announcement
+order.take_order
+#announcement
+#take_order
 
 
 
