@@ -1,7 +1,7 @@
 require_relative ('lib/flower_shop')
 
 
-def display (price_holder)
+def display_bundle_breakup (price_holder)
 
   puts "try again" if price_holder.empty?
   price_holder.each do |key, val|
@@ -12,8 +12,21 @@ def display (price_holder)
       puts " #{v} "
     end
     puts '------------------'
+    break
   end
 
+end
+
+def display_bundle (price_holder)
+  puts "try again" if price_holder.empty?
+  price_holder.each do |key, val|
+    puts "Cost: $ #{key.round(3)}"
+    puts '------------------'
+    puts "Bundle Size"
+    puts " #{val} "
+    puts '------------------'
+    break
+  end
 end
 
 def order_handler (quantity, code)
@@ -26,15 +39,15 @@ def order_handler (quantity, code)
     when "R12"
       puts "ROSES"
       price_holder = FlowerShop.new(price_list_roses, quantity).calculator
-      display price_holder
+      display_bundle price_holder
     when "L09"
       puts "LILIES"
       price_holder = FlowerShop.new(price_list_lilies, quantity).calculator
-      display price_holder
+      display_bundle price_holder
     when "T58"
       puts "TULIPS"
       price_holder = FlowerShop.new(price_list_tulips, quantity).calculator
-      display price_holder
+      display_bundle price_holder
     else
   end
 
