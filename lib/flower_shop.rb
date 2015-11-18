@@ -51,8 +51,7 @@ class FlowerShop
         price += (price_list[lowest] * (revised_quantity/lowest))
         bundle_size += (revised_quantity/lowest)
         content << (revised_quantity/lowest).to_s + ' X ' + lowest.to_s
-        price_holder[price.round(ROUNDING_CONST)] = content
-        bundle_size_holder[price.round(ROUNDING_CONST)] = bundle_size
+        price_bundle_updator price,content,bundle_size
       end
       counter-=1
     end
@@ -77,8 +76,7 @@ class FlowerShop
           price += (price_list[lowest] * (revised_quantity/lowest))
           bundle_size += (revised_quantity/lowest)
           content << (revised_quantity/lowest).to_s + ' X ' + lowest.to_s
-          price_holder[price.round(ROUNDING_CONST)] = content
-          bundle_size_holder[price.round(ROUNDING_CONST)] = bundle_size
+          price_bundle_updator price,content,bundle_size
         end
         counter-=1
       end
@@ -94,10 +92,14 @@ class FlowerShop
         price = (price_list[key] * (quantity/key))
         bundle_size = (quantity/key)
         content << (quantity/key).to_s + ' X ' + key.to_s
-        price_holder[price.round(ROUNDING_CONST)] = content
-        bundle_size_holder[price.round(ROUNDING_CONST)] = bundle_size
+        price_bundle_updator price,content,bundle_size
       end
     end
+  end
+
+  def price_bundle_updator price,content,bundle_size
+    price_holder[price.round(ROUNDING_CONST)] = content
+    bundle_size_holder[price.round(ROUNDING_CONST)] = bundle_size
   end
 
 end

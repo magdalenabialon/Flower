@@ -70,7 +70,7 @@ describe 'FlowerShop' do
 
   context "desired test cases from the specification sheet" do
 
-    it "" do
+    it "allows for testing the results of roses bundle" do
       price_list_roses = {10 => 12.99, 5 => 6.99}
       flower_shop = FlowerShop.new(price_list_roses,10)
       result = flower_shop.calculator
@@ -78,7 +78,7 @@ describe 'FlowerShop' do
 
     end
 
-    it "" do
+    it "allows for testing the results of lilies bundle" do
       price_list_lilies = {9 => 24.95, 6 => 16.95, 3 => 9.95}
       flower_shop = FlowerShop.new(price_list_lilies,15)
       result = flower_shop.calculator
@@ -86,7 +86,7 @@ describe 'FlowerShop' do
 
     end
 
-    it "" do
+    it "allows for testing the results of tulips bundle" do
       price_list_tulips = {9 => 16.99, 5 => 9.95, 3 => 5.95}
       flower_shop = FlowerShop.new(price_list_tulips,13)
       result = flower_shop.calculator
@@ -94,6 +94,30 @@ describe 'FlowerShop' do
     end
   end
 
+  context "allows checking all the quantities for which combination cannot be formed" do
+
+    it "returns an empty hash combination for lilies cannot be found" do
+      price_list_lilies = {9 => 24.95, 6 => 16.95, 3 => 9.95}
+      flower_shop = FlowerShop.new(price_list_lilies,55)
+      result = flower_shop.calculator
+      expect(result).to eq({})
+
+    end
+
+    it "returns an empty hash combination for tulips cannot be found" do
+      price_list_tulips =  {9 => 16.99, 5 => 9.95, 3 => 5.95}
+      flower_shop = FlowerShop.new(price_list_tulips,7)
+      result = flower_shop.calculator
+      expect(result).to eq({})
+    end
+
+    it "returns an empty hash combination for roses cannot be found" do
+      price_list_roses =  {10 => 12.99, 5 => 6.99}
+      flower_shop = FlowerShop.new(price_list_roses,13)
+      result = flower_shop.calculator
+      expect(result).to eq({})
+    end
+  end
 
 end
 

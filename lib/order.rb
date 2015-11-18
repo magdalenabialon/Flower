@@ -1,5 +1,13 @@
 require_relative 'flower_shop'
 class Order
+
+  PRICE_LIST_ROSES_CONST = {10 => 12.99, 5 => 6.99}
+  PRICE_LIST_TULIPS_CONST =  {9 => 16.99, 5 => 9.95, 3 => 5.95}
+  PRICE_LIST_LILIES_CONST = {9 => 24.95, 6 => 16.95, 3 => 9.95}
+  ROSES = "R12"
+  LILIES = "L09"
+  TULIPS = "T58"
+
   attr_accessor :quantity, :code, :order
 
   def initialize
@@ -37,23 +45,18 @@ class Order
   end
 
   def order_handler (quantity, code)
-
-    price_list_tulips = {9 => 16.99, 5 => 9.95, 3 => 5.95}
-    price_list_lilies = {9 => 24.95, 6 => 16.95, 3 => 9.95}
-    price_list_roses = {10 => 12.99, 5 => 6.99}
-
     case code.to_s
-      when "R12"
+      when ROSES
         puts "ROSES"
-        price_holder = FlowerShop.new(price_list_roses, quantity).calculator
+        price_holder = FlowerShop.new(PRICE_LIST_ROSES_CONST, quantity).calculator
         display_bundle_breakup price_holder
-      when "L09"
+      when LILIES
         puts "LILIES"
-        price_holder = FlowerShop.new(price_list_lilies, quantity).calculator
+        price_holder = FlowerShop.new(PRICE_LIST_LILIES_CONST, quantity).calculator
         display_bundle_breakup price_holder
-      when "T58"
+      when TULIPS
         puts "TULIPS"
-        price_holder = FlowerShop.new(price_list_tulips, quantity).calculator
+        price_holder = FlowerShop.new(PRICE_LIST_TULIPS_CONST, quantity).calculator
         display_bundle_breakup price_holder
       else
     end
@@ -97,7 +100,6 @@ class Order
       end
     end
     process_order
-
   end
 
   def process_order
