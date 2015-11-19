@@ -21,7 +21,7 @@ the user with the total price and different combinations of bundle.
 
   def display_bundle_breakup (price_holder)
     # responsible for displaying total price and bundle combination
-    puts "try again" if price_holder.empty?
+    puts "You can't buy this quantity." if price_holder.empty?
     price_holder.each do |key, values|
       @@total_price += key
       puts "Cost: $ #{key}"
@@ -119,6 +119,10 @@ the user with the total price and different combinations of bundle.
 
   def announcement
     puts "Welcome to THE FLOWER SHOP"
+    puts "FLower Name      Product Code"
+    puts "Rose             R12"
+    puts "Lilie            L09"
+    puts "Tulip            T58"
   end
 
   def message
@@ -141,7 +145,7 @@ the user with the total price and different combinations of bundle.
   end
 
   def grand_total
-    puts "The total price is $ #{@@total_price}"
+    puts "The total price is $ #{@@total_price.round(2)}"
   end
 
 end

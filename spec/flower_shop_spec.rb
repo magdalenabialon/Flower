@@ -61,20 +61,13 @@ describe 'FlowerShop' do
     expect(result).to eq({})
   end
 
-  it "allows for testing that algorithm returns a hash of size of one when only one combination can be formed" do
-    price_list_lilies = {9 => 24.95, 6 => 16.95, 3 => 9.95}
-    flower_shop = FlowerShop.new(price_list_lilies,3)
-    result = flower_shop.calculator
-    expect(result).to include(9.95 => ["1 X 3"])
-  end
-
   context "desired test cases from the specification sheet" do
 
     it "allows for testing the results of roses bundle" do
       price_list_roses = {10 => 12.99, 5 => 6.99}
       flower_shop = FlowerShop.new(price_list_roses,10)
       result = flower_shop.calculator
-      expect(result).to include(13.98 => ["2 X 5"], 12.99 => ["1 X 10"])
+      expect(result).to include(12.99 => ["1  X   10  $ 12.99"], 13.98 => ["2  X   5  $ 13.98"])
 
     end
 
@@ -82,7 +75,7 @@ describe 'FlowerShop' do
       price_list_lilies = {9 => 24.95, 6 => 16.95, 3 => 9.95}
       flower_shop = FlowerShop.new(price_list_lilies,15)
       result = flower_shop.calculator
-      expect(result).to include( 41.9 => ["1 X 9", "1 X 6"])
+      expect(result).to include( 41.9 => ["1  X  9  $ 24.95", "1  X  6  $ 16.95"])
 
     end
 
@@ -90,7 +83,7 @@ describe 'FlowerShop' do
       price_list_tulips = {9 => 16.99, 5 => 9.95, 3 => 5.95}
       flower_shop = FlowerShop.new(price_list_tulips,13)
       result = flower_shop.calculator
-      expect(result).to include(25.85 => ["2 X 5", "1 X 3"])
+      expect(result).to include(25.85 =>  ["2  X  5  $ 19.9", "1  X  3  $ 5.95"])
     end
   end
 

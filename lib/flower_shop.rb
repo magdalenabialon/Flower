@@ -41,16 +41,16 @@ the quantity entered by the user.
       content = []
       if ((quantity-highest*counter) > middle) and ((quantity-highest*counter)%middle)%lowest == 0 and (quantity-(highest*counter) > 0) and ((quantity-highest*counter)%middle) > 0
         price = (price_list[highest] * counter)
-        content << (counter).to_s + ' X ' + highest.to_s
+        content << "#{counter}  X  #{highest} $ #{price_list[highest] * counter}"
         bundle_size = counter
         revised_quantity = quantity-(highest*counter)
         price += (price_list[middle] * (revised_quantity/middle))
         bundle_size += (revised_quantity/middle)
-        content << (revised_quantity/middle).to_s + ' X ' + middle.to_s
+        content << "#{(revised_quantity/middle)} X  #{middle} $ #{price_list[middle] * (revised_quantity/middle)}"
         revised_quantity = revised_quantity%middle
         price += (price_list[lowest] * (revised_quantity/lowest))
         bundle_size += (revised_quantity/lowest)
-        content << (revised_quantity/lowest).to_s + ' X ' + lowest.to_s
+        content << "#{revised_quantity/lowest} X #{lowest} $ #{price_list[lowest] * (revised_quantity/lowest)}"
         price_bundle_updater price,content,bundle_size
       end
       counter-=1
@@ -69,11 +69,11 @@ the quantity entered by the user.
         if ((quantity-highest*counter) % lowest == 0) and (quantity-highest*counter) > 0 and quantity > highest
           price = (price_list[highest] * counter)
           bundle_size = counter
-          content << (counter).to_s + ' X ' + highest.to_s
+          content << "#{counter}  X  #{highest}  $ #{price_list[highest] * counter}"
           revised_quantity = quantity-(highest*counter)
           price += (price_list[lowest] * (revised_quantity/lowest))
           bundle_size += (revised_quantity/lowest)
-          content << (revised_quantity/lowest).to_s + ' X ' + lowest.to_s
+          content << "#{revised_quantity/lowest}  X  #{lowest}  $ #{price_list[lowest] * (revised_quantity/lowest)}"
           price_bundle_updater price,content,bundle_size
         end
         counter-=1
@@ -88,7 +88,7 @@ the quantity entered by the user.
       if quantity % key == 0
         price = (price_list[key] * (quantity/key))
         bundle_size = (quantity/key)
-        content << (quantity/key).to_s + ' X ' + key.to_s
+        content << "#{quantity/key}  X   #{key}  $ #{price_list[key] * (quantity/key)}"
         price_bundle_updater price,content,bundle_size
       end
     end
