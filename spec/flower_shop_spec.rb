@@ -96,7 +96,7 @@ describe 'FlowerShop' do
 
   context "allows checking all the quantities for which combination cannot be formed" do
 
-    it "returns an empty hash combination for lilies cannot be found" do
+    it "returns an empty hash for lilie quantities for which combination can't be formed" do
       price_list_lilies = {9 => 24.95, 6 => 16.95, 3 => 9.95}
       flower_shop = FlowerShop.new(price_list_lilies,55)
       result = flower_shop.calculator
@@ -104,20 +104,19 @@ describe 'FlowerShop' do
 
     end
 
-    it "returns an empty hash combination for tulips cannot be found" do
+    it "returns an empty hash for tulip quantities for which combination can't be formed " do
       price_list_tulips =  {9 => 16.99, 5 => 9.95, 3 => 5.95}
       flower_shop = FlowerShop.new(price_list_tulips,7)
       result = flower_shop.calculator
       expect(result).to eq({})
     end
 
-    it "returns an empty hash combination for roses cannot be found" do
+    it "returns an empty hash for rose quantities for which combination can't be formed" do
       price_list_roses =  {10 => 12.99, 5 => 6.99}
       flower_shop = FlowerShop.new(price_list_roses,13)
       result = flower_shop.calculator
       expect(result).to eq({})
     end
   end
-
 end
 
