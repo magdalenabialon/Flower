@@ -45,29 +45,29 @@ output is not important)
     2 x 5 $9.95
     1 x 3 $5.95
     
-## My Output
+##My Output
 
- 10 ROSES
+10 ROSES
 Cost: $ 12.99
 ------------------
 Qty | Bundle Size
- 1  X   10  $ 12.99 
+1  X   10  $ 12.99 
 ------------------
- 15 LILIES
+15 LILIES
 Cost: $ 41.9
 ------------------
 Qty | Bundle Size
- 1  X  9  $ 24.95 
- 1  X  6  $ 16.95 
+1  X  9  $ 24.95 
+1  X  6  $ 16.95 
 ------------------
- 13 TULIPS
+13 TULIPS
 Cost: $ 25.85
 ------------------
 Qty | Bundle Size
- 2  X  5  $ 19.9 
- 1  X  3  $ 5.95 
+2  X  5  $ 19.9 
+1  X  3  $ 5.95 
 ------------------
 
-The total price is $ 80.74
+The total price is  $ 80.74
 Thank You for buying flowers !
 

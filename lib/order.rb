@@ -21,7 +21,7 @@ the user with the total price and different combinations of bundle.
 
   def display_bundle_breakup (price_holder)
     # responsible for displaying total price and bundle combination
-    puts "You can't buy this quantity." if price_holder.empty?
+    puts "You can't buy this quantity.Try again with a different quantity" if price_holder.empty?
     price_holder.each do |key, values|
       @@total_price += key
       puts "Cost: $ #{key}"
