@@ -31,7 +31,7 @@ the user with the total price and different combinations of bundle.
         puts " #{value} "
       end
       puts '------------------'
-      break
+      #break
     end
   end
 

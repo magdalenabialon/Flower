@@ -6,6 +6,7 @@ the quantity entered by the user.
 
 
   COUNTER_CONST = 20
+  REVISED_COUNTER_CONST = 20
   ROUNDING_CONST = 2
   attr_accessor :price_list, :quantity, :price_holder, :bundle_size_holder
 
@@ -88,6 +89,7 @@ the quantity entered by the user.
     end
   end
 
+
   def doubles (keys)
     #finding bundle combinations comprising of two different bundle sizes
     total_combinations = keys.combination(2).to_a
@@ -97,7 +99,7 @@ the quantity entered by the user.
       counter = COUNTER_CONST
       while counter > 0
         content = []
-        if ((quantity-highest*counter) % lowest == 0) and (quantity-highest*counter) > 0 and quantity > highest
+        if ((quantity-highest*counter) % lowest == 0) and (quantity-highest*counter) > 0 and (quantity > highest)
           price = (price_list[highest] * counter)
           bundle_size = counter
           content << "#{counter}  X  #{highest}  $ #{(price_list[highest] * counter).round(ROUNDING_CONST)}"
@@ -132,3 +134,4 @@ the quantity entered by the user.
   end
 
 end
+
