@@ -12,11 +12,11 @@ the user with the total price and different combinations of bundle.
   LILIES = "L09"
   TULIPS = "T58"
 
+  @@total_price = 0
   attr_accessor :my_order
 
   def initialize
     @my_order = Hash.new
-    @@total_price = 0
   end
 
   def display_bundle_breakup (price_holder)

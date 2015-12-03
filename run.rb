@@ -7,10 +7,3 @@ order.take_order
 
 
 
-
-
-
-
-
-
-
