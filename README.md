@@ -1,3 +1,17 @@
+## Flower Shop Code Challenge
+
+● Navigate to the root of the folder “cogent” and run “bundle install” to install any
+
+dependencies.
+
+● Run “ruby run.rb” to execute the program.
+
+● To run the test ­ type “rspec spec/order_spec.rb” or “rspec
+
+spec/flower_shop_spec.rb”
+
+
+
 ##Context:
 
 A flower shop used to base the price of their flowers on an item by item cost. So if a
