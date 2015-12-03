@@ -31,7 +31,7 @@ the user with the total price and different combinations of bundle.
         puts " #{value} "
       end
       puts '------------------'
-      GITbreak
+      break
     end
   end
 
