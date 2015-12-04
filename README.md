@@ -1,6 +1,6 @@
 ## Flower Shop Code Challenge
 
-● Navigate to the root of the folder “cogent” and run “bundle install” to install any
+● Navigate to the root of the folder and run “bundle install” to install any
 
 dependencies.
 
